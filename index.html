@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ipv6-hosts by lennylxx</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Ipv6-hosts</h1>
+        <p>Fork from the inactive Google Code project ipv6-hosts: https://code.google.com/p/ipv6-hosts/</p>
+
+        <p class="view"><a href="https://github.com/lennylxx/ipv6-hosts">View the Project on GitHub <small>lennylxx/ipv6-hosts</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/lennylxx/ipv6-hosts/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/lennylxx/ipv6-hosts/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/lennylxx/ipv6-hosts">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a id="why" class="anchor" href="#why" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why</h2>
+
+<p>Google Code 上的 <a href="https://code.google.com/p/ipv6-hosts">ipv6-hosts</a> 项目已经不是很活跃，很多域名已经失效，因此新建一个项目提供有效的 ipv6 hosts。</p>
+
+<h2>
+<a id="what" class="anchor" href="#what" aria-hidden="true"><span class="octicon octicon-link"></span></a>What</h2>
+
+<p>本项目将 ipv6-hosts 地址重新进行分类整理，添加了许多新地址，并且提供了一个刷新地址的脚本。</p>
+
+<table>
+<thead>
+<tr>
+<th><strong>Hosts:</strong></th>
+<th><a href="https://raw.githubusercontent.com/lennylxx/ipv6-hosts/master/hosts">https://raw.githubusercontent.com/lennylxx/ipv6-hosts/master/hosts</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wiki:</strong></td>
+<td><a href="https://github.com/lennylxx/ipv6-hosts/wiki">https://github.com/lennylxx/ipv6-hosts/wiki</a></td>
+</tr>
+<tr>
+<td><strong>Info:</strong></td>
+<td><a href="https://docs.google.com/spreadsheets/d/1a5HI0lkc1TycJdwJnCVDVd3x6_gemI3CQhNHhdsVmP8" target="_blank">1e100 服务器部署信息表</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>虽然本项目给出了一些域名的 IPv6 地址，某些网站仍需要使用 HTTPS 协议才能实现穿墙。<br>
+推荐使用 <a href="https://www.eff.org/https-everywhere">HTTPS Everywhere</a> 插件，支持主流的浏览器。</p>
+
+<blockquote>
+<p>使用 Chrome 的用户也可以在 <code>chrome://net-internals/#hsts</code> 页面加入需要强制使用 HTTPS 访问的域名，并勾选 STS 和 PKP 两个复选框。但这种方式好像重启浏览器之后就会失效。</p>
+</blockquote>
+
+<h2>
+<a id="脚本" class="anchor" href="#%E8%84%9A%E6%9C%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>脚本</h2>
+
+<p><a href="https://github.com/lennylxx/ipv6-hosts/blob/master/update_hosts.sh">update_hosts.sh</a> </p>
+
+<blockquote>
+<p>用于更新 hosts 文件中 IPv6 地址的 BASH 脚本。单线程，速度非常慢。有时间写个多线程的。</p>
+</blockquote>
+
+<pre><code>./update_hosts.sh hosts new_hosts
+</code></pre>
+
+<p><a href="https://github.com/lennylxx/ipv6-hosts/blob/master/merge_snippets.sh">merge_snippets.sh</a> </p>
+
+<blockquote>
+<p>用于合并 hosts 文件的 BASH 脚本。</p>
+</blockquote>
+
+<pre><code>./merge_snippets.sh new_hosts
+</code></pre>
+
+<h2>
+<a id="常用公共-dns-服务器" class="anchor" href="#%E5%B8%B8%E7%94%A8%E5%85%AC%E5%85%B1-dns-%E6%9C%8D%E5%8A%A1%E5%99%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>常用公共 DNS 服务器</h2>
+
+<ul>
+<li>如果您的网络环境时延较小（ping 下列 DNS 时延小于 60ms），强烈建议您 <strong>不要</strong> 使用本项目，直接配置 IPv6 DNS。<br>
+</li>
+<li>因为 hosts 文件维护起来很麻烦，并不能保证 IP 与 DNS 同步，并且 hosts 文件提供的 IP 地址（大多来自国外的公共 DNS ），在您的网络环境下并不一定能提供最佳的访问速度。<br>
+</li>
+<li>目前几乎所有的 DNS 都支持 IPv6，如果您所在的网络有可信的且不受干扰的 DNS，建议直接配置 DNS。</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>美国</th>
+<th>美国</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hostname</td>
+<td><strong>ordns.he.net</strong></td>
+<td><strong>google-public-dns-a.google.com</strong></td>
+</tr>
+<tr>
+<td>IPv6</td>
+<td>2001:470:20::2</td>
+<td>2001:4860:4860::8888</td>
+</tr>
+<tr>
+<td>IPv4</td>
+<td>74.82.42.42</td>
+<td>8.8.8.8</td>
+</tr>
+<tr>
+<td>ISP</td>
+<td>Hurricane Electric Inc.</td>
+<td>Google Inc.</td>
+</tr>
+<tr>
+<td>City</td>
+<td>Fremont</td>
+<td>Mountain View</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>香港</th>
+<th>日本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hostname</td>
+<td><strong>dns.hutchcity.com</strong></td>
+<td><strong>ns01.miinet.jp</strong></td>
+</tr>
+<tr>
+<td>IPv4</td>
+<td>202.45.84.58</td>
+<td>203.112.2.4</td>
+</tr>
+<tr>
+<td>ISP</td>
+<td>Hutchison Whampoa Ltd.</td>
+<td>UCOM Corporation</td>
+</tr>
+<tr>
+<td>City</td>
+<td>Hong Kong</td>
+<td>Tokyo</td>
+</tr>
+</tbody>
+</table>
+
+<p>更多公共 DNS 服务器请查询： <a href="http://public-dns.tk">http://public-dns.tk</a></p>
+
+<blockquote>
+<p><strong>Q &amp; A</strong><br>
+Q: 我访问 Google 太慢了，如何加速？<br>
+A: 将 Google 的动态 IPv6 前缀换为较近的地址段(如香港，日本等)：<br>
+这些动态 IP 大多分布在 snippets:<a href="snippets/01_google.txt">01</a>-<a href="snippets/02_l.google.txt">02</a>-<a href="snippets/03_adwords.txt">03</a>-<a href="snippets/04_android.txt">04</a>-<a href="snippets/05_bigcache.txt">05</a>-<a href="snippets/06_googleusercontent.txt">06</a> 中。<br>
+如可以将 <code>2404:6800:400a: (大阪)</code> 换为 <code>2404:6800:4005: (香港)</code>。<br>
+更多信息请参考 <a href="https://github.com/lennylxx/ipv6-hosts/wiki/1e100.net">1e100.net</a> 和 <a href="https://github.com/lennylxx/ipv6-hosts/wiki/Youtube">Youtube</a>。</p>
+</blockquote>
+
+<h2>
+<a id="收录原则" class="anchor" href="#%E6%94%B6%E5%BD%95%E5%8E%9F%E5%88%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>收录原则</h2>
+
+<ol>
+<li>本项目主要收集经常访问的且被屏蔽的支持 IPv6 技术的站点，如 Google Search，Gmail，Youtube，Google Plus，Google Docs，Google Play，Wikipedia，Facebook 等等。</li>
+<li>
+<del>暂时不收录不支持 IPv6 且被屏蔽的站点，如 Twitter。</del> 已支持 Dropbox，StackOverflow，deviantART。</li>
+<li>部分收录严重影响上网体验的 IPv4 站点，如 Youtube 部分视频缓存服务器，OneDrive 等。</li>
+<li>不收录支持 IPv6 但不被屏蔽的站点，如教育网内各大高校的网站。<br>
+</li>
+</ol>
+
+<blockquote>
+<p><strong>Q &amp; A</strong><br>
+Q: 为什么没有 Twitter？<br>
+A: 首先 Twitter 不支持 IPv6，网上流传的地址并不是官方 IPv6 地址；其次针对 Twitter 采取了 <a href="https://github.com/lennylxx/ipv6-hosts/wiki/DNS-spoofing">DNS 污染</a>和 IP 封锁等多重封禁手段，仅靠 hosts+HTTPS 并不能实现穿墙。 </p>
+</blockquote>
+
+<h2>
+<a id="关于隐私" class="anchor" href="#%E5%85%B3%E4%BA%8E%E9%9A%90%E7%A7%81" aria-hidden="true"><span class="octicon octicon-link"></span></a>关于隐私</h2>
+
+<ul>
+<li>互联网上是没有隐私的，不管是 GFW (政府) 还是 Google (公司) 都会监控并收集您的个人信息、搜索历史、发帖内容等等，特殊情况下，这些信息全部可以用于追踪。</li>
+<li>现在甚至还出现了根据用户社交行为和其他信息来建立个人信用机制的公司。</li>
+<li>常怀感恩之心，切勿滥用免费资源。</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/lennylxx">lennylxx</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
